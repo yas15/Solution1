@@ -8,6 +8,11 @@ using HotDogs.Adapters;
 
 namespace HotDogs
 {
+
+    // An activity in an Android app represents a single screen with a user interface.
+    // All activity’s must inherit from the Activity class and have an Activity attribute.
+    // Setting MainLauncher = true, will cause this to be the first app screen.
+    // Label = "Hotdog detail":  Change the name of the app to "Hotdog detail"
     [Activity(Label = "HotDogMenuActivity", MainLauncher = true)]
     public class HotDogMenuActivity : Activity
     {

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using ClassLibrary1.Service;
 using ClassLibrary1.Model;
@@ -17,10 +10,8 @@ namespace HotDogs
 {
     // An activity in an Android app represents a single screen with a user interface.
     // All activity’s must inherit from the Activity class and have an Activity attribute.
-    // Setting MainLauncher = true, will cause this activity to be created,
-    // when we launch the application i.e. this will be the first app screen.
     // Label = "Hotdog detail":  Change the name of the app to "Hotdog detail"
-    [Activity(Label = "Hotdog details", MainLauncher = true)]
+    [Activity(Label = "Hotdog details")]
     public class HotDogDetailActivity : Activity
     {
         private ImageView hotDogImageView;
@@ -88,6 +79,8 @@ namespace HotDogs
 
             // var imageBitmap = ImageHelper.GetImageBitmapFromUrl("http://gillcleerenpluralsight.blob.core.windows.net/files/" + selectedHotDog.ImagePath + ".jpg");
 
+            // since we are getting the image from a URL, the data service on the mobile device
+            // must be switched on, otherwise the app will error out.
             var imageBitmap = ImageHelper.GetImageBitmapFromUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/NCI_Visuals_Food_Hot_Dog.jpg/800px-NCI_Visuals_Food_Hot_Dog.jpg");
 
             hotDogImageView.SetImageBitmap(imageBitmap);

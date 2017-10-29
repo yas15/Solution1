@@ -7,6 +7,8 @@ using HotDogs.Utility;
 
 namespace HotDogs.Adapters
 {
+    //ListView is a view group that displays a list of scrollable items. The list items are automatically 
+    //inserted to the list using an Adapter that pulls content from a source such
     public class HotDogListAdapter : BaseAdapter<HotDog>
     {
         List<HotDog> items;
@@ -43,6 +45,8 @@ namespace HotDogs.Adapters
         {
             var item = items[position];
 
+            // since we are getting the image from a URL, the data service on the mobile device
+            // must be switched on, otherwise the app will error out.
             var imageBitmap = ImageHelper.GetImageBitmapFromUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/NCI_Visuals_Food_Hot_Dog.jpg/800px-NCI_Visuals_Food_Hot_Dog.jpg");
 
             if (convertView == null)
